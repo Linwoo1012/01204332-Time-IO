@@ -3,20 +3,21 @@
 
 int main(){
     clock_t start, end;
-    char ch;
-    printf("Run I/O(y/n)? ");
-    scanf("%c", &ch);
+    clock_t start2, end2;
+
+    //run io
     start = clock();
-    if(ch == 'y'){
-        for(long i = 0; i < 100000000; i++){
-            printf("");
-        }
-    }
-    else{
-        for(long i = 0; i < 100000000; i++){
-            ;
-        }
+    for(long i = 0; i < 100; i++){
+        printf(".");
     }
     end = clock();
-    printf("Time: %lf s\n", (double)(end - start)/CLOCKS_PER_SEC);
+    printf("\nTime(I/O)\t: %lf s\n", (double)(end - start)/CLOCKS_PER_SEC);
+
+    //dont run io
+    start2 = clock();
+    for(long i = 0; i < 100; i++){
+        ;
+    }
+    end2 = clock();
+    printf("Time(no I/O)\t: %lf s\n", (double)(end2 - start2)/CLOCKS_PER_SEC);
 }
