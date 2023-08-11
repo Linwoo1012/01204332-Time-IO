@@ -7,18 +7,19 @@ int main(){
 
     //run io
     start = clock();
-    for(long i = 0; i < 1000000; i++){
-        printf("%d/n", i);
+    for(long i = 0; i < 100000; i++){
+        printf(" ");
     }
     end = clock();
-    printf("\nTime(I/O)\t: %lf s\n", (double)(end - start)/CLOCKS_PER_SEC);
-
+    
     //dont run io
     int a = 0;
     start2 = clock();
-    for(long i = 0; i < 1000000; i++){
+    for(long i = 0; i < 100000; i++){
         a++;
     }
     end2 = clock();
+    
+    printf("\nTime(I/O)\t: %lf s\n", (double)(end - start)/CLOCKS_PER_SEC);
     printf("Time(no I/O)\t: %lf s\n", (double)(end2 - start2)/CLOCKS_PER_SEC);
 }
